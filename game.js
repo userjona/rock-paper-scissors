@@ -16,7 +16,7 @@ function getComputerChoice(){
     return computer;
 }
 
-function turn(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         console.log("tie");
     }
@@ -44,4 +44,4 @@ let playerSelection = prompt("Rock - Paper - Scissors");
 let player1 = playerSelection.toLowerCase();
 let computerSelection = getComputerChoice();
 
-turn(player1, computerSelection);
+playRound(player1, computerSelection);

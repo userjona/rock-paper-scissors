@@ -18,12 +18,15 @@ buttons[0].addEventListener('click', () => {
 buttons[1].addEventListener('click', () => {
     playRound("paper", getComputerChoice());
     pushResult();
+    console.log(playerPoints)
 });
 
 buttons[2].addEventListener('click', () => {
     playRound("scissors", getComputerChoice());
     pushResult();
 });
+
+
 
 function getComputerChoice() {
     let min = 1;
@@ -52,7 +55,7 @@ function playRound(playerSelection, computerSelection) {
             playerPoints++;
         } else if (computerSelection === "paper") {
          results.push("You lose! Paper beats rock");
-            computerPoints++;
+         computerPoints++;
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
@@ -71,13 +74,25 @@ function playRound(playerSelection, computerSelection) {
             playerPoints++;
         }
     }
+    if(playerPoints === 5)
+    {
+        alert("Player wins!");
+        playerPoints = 0;
+        computerPoints = 0;
+        
+    }else if(computerPoints === 5){
+        alert("Computer wins");
+        playerPoints = 0;
+        computerPoints = 0;
+    }
 }
 
 function pushResult(){
     let lastIndex = results.length - 1;
     paraElement.textContent = results[lastIndex];
     showResults.appendChild(paraElement);
-
 }
+
+
 
 

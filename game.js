@@ -3,7 +3,17 @@ let computerPoints = 0;
 
 const buttons = document.querySelectorAll('button');
 
+buttons[0].addEventListener('click', () => {
+    playRound("rock", getComputerChoice());
+});
 
+buttons[1].addEventListener('click', () => {
+    playRound("paper", getComputerChoice());
+});
+
+buttons[2].addEventListener('click', () => {
+    playRound("scissors", getComputerChoice());
+});
 
 function getComputerChoice() {
     let min = 1;

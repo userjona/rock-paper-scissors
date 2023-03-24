@@ -1,6 +1,10 @@
 let playerPoints = 0;
 let computerPoints = 0;
 
+const buttons = document.querySelectorAll('button');
+
+
+
 function getComputerChoice() {
     let min = 1;
     let max = 3;
@@ -50,17 +54,4 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock - Paper - Scissors");
-        let playerFormat = playerSelection.toLowerCase();
-        let computerSelection = getComputerChoice();
-        playRound(playerFormat, computerSelection);
-
-        console.log(`Player ${playerPoints} (${playerFormat}) - Computer ${computerPoints} (${computerSelection})`);
-        
-    }
-}
-
-game();
 
